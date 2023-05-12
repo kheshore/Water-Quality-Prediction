@@ -8,10 +8,10 @@ from tkinter import filedialog as fd
 from tkinter.messagebox import showinfo
 
 window = tk.Tk()
-window.title('Suriya varshini S - Water Quality Data Processing')
+window.title('Water Quality Data Processing')
 Name = tk.Label(text="Select The DataSet")
 Name1 = tk.Label(text="Water Quality Prediction Project")
-Name2 = tk.Label(text="By Suriya varshini S")
+Name2 = tk.Label(text="By Kheshore JR")
 Name1.pack()
 Name2.pack()
 Name.pack()
@@ -58,23 +58,23 @@ while (filename!=0):
 
     df.describe()
 
-    df.Potability.value_counts().plot(kind="bar", color=["brown", "salmon"], title='Potability - Water Quality Prediction By Suriya varshini S')
+    df.Potability.value_counts().plot(kind="bar", color=["brown", "salmon"], title='Potability')
     plt.show()
 
-    sns.displot(df['ph']).set(title='pH Distribution - Water Quality Prediction By Suriya varshini S')
+    sns.displot(df['ph']).set(title='pH Distribution')
 
     df.hist(figsize=(14,14))
-    plt.title('pH Distribution - Water Quality Prediction By Suriya varshini S')
+    plt.title('pH Distribution - Water Quality Prediction')
     plt.show()
-    sns.pairplot(df,hue='Potability').fig.suptitle('Water Quality Prediction By Suriya varshini S')
+    sns.pairplot(df,hue='Potability').fig.suptitle('Water Quality Prediction')
 
 
     # create a correlation heatmap
-    sns.heatmap(df.corr(),annot=True, cmap='terrain', linewidths=0.1).set(title='Heat Map Distribution - Water Quality Prediction By Suriya varshini S')
+    sns.heatmap(df.corr(),annot=True, cmap='terrain', linewidths=0.1).set(title='Heat Map Distribution')
     fig=plt.gcf()
     fig.set_size_inches(8,6)
     plt.show()
-    df.boxplot(figsize=(14,7)).set(title='Box Plot - Water Quality Prediction By Suriya varshini S')
+    df.boxplot(figsize=(14,7)).set(title='Box Plot')
     X = df.drop('Potability',axis=1)
     Y= df['Potability']
     from sklearn.model_selection import train_test_split
